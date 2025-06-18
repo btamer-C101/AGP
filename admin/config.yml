@@ -6,7 +6,7 @@ media_folder: "assets/imgs"
 public_folder: "/assets/imgs"
 
 collections:
-  # Homepage Content - Detailed Form
+  # Homepage Content
   - name: "homepage"
     label: "Homepage"
     files:
@@ -39,7 +39,7 @@ collections:
               - { label: "Section Title", name: "section_title", widget: "string", default: "We're The Experts Florida Trusts" }
               - { label: "Section Description", name: "section_description", widget: "text", default: "If you need expert plumbing services in Florida, join the growing number of satisfied clients that have experienced our exceptional service for over 37 years." }
 
-  # About Us Page - Detailed Form  
+  # About Us Page
   - name: "about"
     label: "About Us Page"
     files:
@@ -64,12 +64,12 @@ collections:
               - { label: "Paragraph 3", name: "paragraph_3", widget: "text", default: "Our Promise? We don't repair and disappear. At AGP, every project is a partnership. Our work doesn't end when the system is installed—we provide 24/7 emergency response, preventative maintenance, and infrastructure audits." }
 
   # Contact Page
-  - name: "contact"
+  - name: "contact_page"
     label: "Contact Page"
     files:
-      - label: "Contact Content"
-        name: "contact"
-        file: "content/contact.json"
+      - label: "Contact Page Content"
+        name: "contact_page"
+        file: "content/contact-content.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -85,7 +85,7 @@ collections:
               - { label: "Main Title", name: "main_title", widget: "string", default: "We're Here For You Florida." }
               - { label: "Description", name: "description", widget: "text", default: "No matter what you need, our team is here to help. Send us a message and we'll be in touch as soon as possible. Emergency services available from 7am – 4pm." }
               - { label: "Service Areas Title", name: "areas_title", widget: "string", default: "Area We Serve." }
-              - { label: "Service Areas List", name: "service_areas", widget: "text", default: "West Central Florida, Hillsborough, Manatee, Sarasota, Pinellas, Pasco" }
+              - { label: "Service Areas List", name: "service_areas", widget: "text", default: "West Central Florida<br>Hillsborough<br>Manatee<br>Sarasota<br>Pinellas<br>Pasco" }
 
   # Service Pages
   - name: "plumbing"
@@ -119,12 +119,105 @@ collections:
               - { label: "Paragraph 2", name: "paragraph_2", widget: "text", default: "Our commercial plumbing services include tenant buildouts, gas piping, grease trap systems, backflow certification, and large-scale drain line replacements." }
               - { label: "Paragraph 3", name: "paragraph_3", widget: "text", default: "More than installers, we are strategic infrastructure partners offering long-term support—preventative maintenance, emergency repairs, and performance audits." }
 
+  - name: "sewer_services"
+    label: "Sewer Services"
+    files:
+      - label: "Sewer Services Content"
+        name: "sewer_services"
+        file: "content/sewer-services.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero Label", name: "hero_label", widget: "string", default: "SEWER SERVICES" }
+              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust" }
+              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/sewer-services-hero.jpg" }
+          - label: "Services Overview"
+            name: "services_overview"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
+              - { label: "Section Title", name: "section_title", widget: "text", default: "Comprehensive Sewer Solutions for Commercial & Industrial Facilities" }
+              - { label: "Section Description", name: "section_description", widget: "text", default: "American Gulf Plumbing delivers expert sewer services for Florida's commercial, industrial, and governmental sectors." }
+              - { label: "Overview Image", name: "overview_image", widget: "image", default: "/assets/imgs/sewer-services-overview.jpg" }
+          - label: "Main Content"
+            name: "main_content"
+            widget: "object"
+            fields:
+              - { label: "Content Title", name: "content_title", widget: "text", default: "Expert Sewer Systems Built for Florida's Toughest Environments" }
+              - { label: "Paragraph 1", name: "paragraph_1", widget: "text", default: "American Gulf Plumbing provides complete sewer solutions for commercial, industrial, and government facilities." }
+              - { label: "Paragraph 2", name: "paragraph_2", widget: "text", default: "From system design and trenchless installations to backflow testing and lift station maintenance." }
+              - { label: "Paragraph 3", name: "paragraph_3", widget: "text", default: "We respond fast to emergencies—but we're built for prevention." }
+
+  - name: "drain_services"
+    label: "Drain Services"
+    files:
+      - label: "Drain Services Content"
+        name: "drain_services"
+        file: "content/drain-services.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero Label", name: "hero_label", widget: "string", default: "DRAIN SERVICES" }
+              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust" }
+              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/drain-services-hero.jpg" }
+          - label: "Services Overview"
+            name: "services_overview"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
+              - { label: "Section Title", name: "section_title", widget: "text", default: "Professional Drain Solutions for Commercial & Industrial Facilities" }
+              - { label: "Section Description", name: "section_description", widget: "text", default: "American Gulf Plumbing specializes in comprehensive drain services for Florida's commercial, industrial, and governmental sectors." }
+              - { label: "Overview Image", name: "overview_image", widget: "image", default: "/assets/imgs/drain-cleaning.jpg" }
+          - label: "Main Content"
+            name: "main_content"
+            widget: "object"
+            fields:
+              - { label: "Content Title", name: "content_title", widget: "text", default: "Reliable Drain Services for Florida's Demanding Facilities" }
+              - { label: "Paragraph 1", name: "paragraph_1", widget: "text", default: "AGP's drain services are engineered to support Florida's commercial, industrial, and governmental operations with precision." }
+              - { label: "Paragraph 2", name: "paragraph_2", widget: "text", default: "We don't just respond—we proactively protect your systems." }
+              - { label: "Paragraph 3", name: "paragraph_3", widget: "text", default: "Whether it's routine maintenance or emergency response, our mission is to ensure continuous flow and compliance." }
+
+  - name: "sewer_drain"
+    label: "Sewer & Drain Services"
+    files:
+      - label: "Sewer & Drain Content"
+        name: "sewer_drain"
+        file: "content/sewer-drain.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero Label", name: "hero_label", widget: "string", default: "SEWER & DRAIN SERVICES" }
+              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust" }
+              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/sewer-drain-hero.jpg" }
+          - label: "Services Overview"
+            name: "services_overview"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
+              - { label: "Section Title", name: "section_title", widget: "text", default: "Professional Sewer & Drain Solutions for Commercial & Industrial Facilities" }
+              - { label: "Section Description", name: "section_description", widget: "text", default: "American Gulf Plumbing specializes in comprehensive sewer and drain services for Florida's commercial, industrial, and governmental sectors." }
+              - { label: "Overview Image", name: "overview_image", widget: "image", default: "/assets/imgs/sewer-drain-overview.jpg" }
+          - label: "Main Content"
+            name: "main_content"
+            widget: "object"
+            fields:
+              - { label: "Content Title", name: "content_title", widget: "text", default: "Integrated Sewer & Drain Services for High-Volume Systems" }
+              - { label: "Paragraph 1", name: "paragraph_1", widget: "text", default: "AGP delivers unified sewer and drain solutions for Florida's most complex facilities." }
+              - { label: "Paragraph 2", name: "paragraph_2", widget: "text", default: "Our capabilities include sewer jetting, video inspection, emergency backups, and full line replacements." }
+              - { label: "Paragraph 3", name: "paragraph_3", widget: "text", default: "Prevent downtime, mitigate risk, and ensure compliance with American Gulf Plumbing." }
+
   # Global Settings
   - name: "settings"
     label: "Global Settings"
     files:
       - label: "Contact Information"
-        name: "contact"
+        name: "contact_settings"
         file: "content/contact.json"
         fields:
           - { label: "Emergency Phone", name: "emergency_phone", widget: "string", default: "(866) 374-0402" }
