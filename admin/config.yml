@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "assets/imgs"
-public_folder: "/assets/imgs"
+public_folder: "../assets/imgs"
 
 collections:
   # Content Data Files (JSON format for easy JavaScript loading)
@@ -22,7 +22,7 @@ collections:
               - { label: "Hero Title", name: "title", widget: "text", default: "Florida Plumbing, Sewer & Drain Services Since 1987" }
               - { label: "Hero Description", name: "description", widget: "text", default: "American Gulf Plumbing (AGP) focus on commercial, industrial, and governmental plumbing, specializing in the complex, large-scale demands of these sectors, delivering sustained solutions that keep operations running." }
               - { label: "Years in Business", name: "years", widget: "number", default: 37 }
-              - { label: "Hero Image", name: "image", widget: "image", default: "/assets/imgs/van.png" }
+              - { label: "Hero Image", name: "image", widget: "image", default: "../assets/imgs/van.png" }
           - label: "Service Areas"
             name: "service_areas"
             widget: "object"
@@ -30,7 +30,7 @@ collections:
               - { label: "Section Label", name: "label", widget: "string", default: "SERVICE AREAS" }
               - { label: "Section Title", name: "title", widget: "string", default: "Serving Florida With Superior Service" }
               - { label: "Description", name: "description", widget: "text", default: "our team of dispatchers and fleet of fully-stocked trucks allow us to serve homeowners throughout the greater Florida" }
-              - { label: "Map Image", name: "image", widget: "image", default: "/assets/imgs/service-map.jpg" }
+              - { label: "Map Image", name: "image", widget: "image", default: "../assets/imgs/service-map.jpg" }
           - label: "Services Section"
             name: "services"
             widget: "object"
@@ -49,7 +49,7 @@ collections:
             fields:
               - { label: "Hero Label", name: "label", widget: "string", default: "ABOUT US" }
               - { label: "Hero Title", name: "title", widget: "text", default: "Your Trusted Florida Plumbing, Sewer & Drain Experts" }
-              - { label: "Background Image", name: "image", widget: "image", default: "/assets/imgs/team-background.jpg" }
+              - { label: "Background Image", name: "image", widget: "image", default: "../assets/imgs/team-background.jpg" }
           - label: "About Content"
             name: "content"
             widget: "object"
@@ -105,14 +105,14 @@ collections:
         name: "images"
         file: "content/images.json"
         fields:
-          - { label: "Main Logo", name: "main_logo", widget: "image", default: "/assets/imgs/AGP-logo.png" }
-          - { label: "Footer Logo", name: "footer_logo", widget: "image", default: "/assets/imgs/AGP-logo-no-title.png" }
-          - { label: "Hero Van Image", name: "hero_van", widget: "image", default: "/assets/imgs/van.png" }
-          - { label: "Service Map", name: "service_map", widget: "image", default: "/assets/imgs/service-map.jpg" }
-          - { label: "Team Background", name: "team_bg", widget: "image", default: "/assets/imgs/team-background.jpg" }
-          - { label: "Contact Background", name: "contact_bg", widget: "image", default: "/assets/imgs/contact-background.jpg" }
-          - { label: "Plumbing Hero Background", name: "plumbing_bg", widget: "image", default: "/assets/imgs/commercial-plumbing-hero.jpg" }
-          - { label: "Commercial Plumbing Image", name: "commercial_plumbing", widget: "image", default: "/assets/imgs/commercial-plumbing.jpg" }
+          - { label: "Main Logo", name: "main_logo", widget: "image", default: "../assets/imgs/AGP-logo.png" }
+          - { label: "Footer Logo", name: "footer_logo", widget: "image", default: "../assets/imgs/AGP-logo-no-title.png" }
+          - { label: "Hero Van Image", name: "hero_van", widget: "image", default: "../assets/imgs/van.png" }
+          - { label: "Service Map", name: "service_map", widget: "image", default: "../assets/imgs/service-map.jpg" }
+          - { label: "Team Background", name: "team_bg", widget: "image", default: "../assets/imgs/team-background.jpg" }
+          - { label: "Contact Background", name: "contact_bg", widget: "image", default: "../assets/imgs/contact-background.jpg" }
+          - { label: "Plumbing Hero Background", name: "plumbing_bg", widget: "image", default: "../assets/imgs/commercial-plumbing-hero.jpg" }
+          - { label: "Commercial Plumbing Image", name: "commercial_plumbing", widget: "image", default: "../assets/imgs/commercial-plumbing.jpg" }
 
   # Social Media Links
   - name: "social"
