@@ -6,7 +6,7 @@ media_folder: "assets/imgs"
 public_folder: "/assets/imgs"
 
 collections:
-  # Homepage Content
+  # Homepage Contents
   - name: "homepage"
     label: "Homepage"
     files:
