@@ -125,5 +125,3 @@ collections:
           - { label: "Facebook URL", name: "facebook", widget: "string", default: "https://www.facebook.com/AmericanGulfPlumbing" }
           - { label: "Instagram URL", name: "instagram", widget: "string", default: "https://www.instagram.com/americangulfplumbing" }
           - { label: "LinkedIn URL", name: "linkedin", widget: "string", default: "" }
-
-          
