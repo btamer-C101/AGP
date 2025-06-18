@@ -2,13 +2,13 @@
   "hero": {
     "hero_label": "SEWER & DRAIN SERVICES",
     "hero_title": "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust",
-    "background_image": "/assets/imgs/sewer-drain-hero.jpg"
+    "background_image": "../assets/imgs/sewer-drain-hero.jpg"
   },
   "services_overview": {
     "section_label": "WHAT WE DO",
     "section_title": "Professional Sewer & Drain Solutions for Commercial & Industrial Facilities",
     "section_description": "American Gulf Plumbing specializes in comprehensive sewer and drain services for Florida's commercial, industrial, and governmental sectors. Our expert technicians handle everything from routine maintenance to emergency repairs, ensuring your drainage systems operate efficiently and comply with all regulations.",
-    "overview_image": "/assets/imgs/sewer-drain-overview.jpg"
+    "overview_image": "../assets/imgs/sewer-drain-overview.jpg"
   },
   "main_content": {
     "content_title": "Integrated Sewer & Drain Services for High-Volume Systems",
