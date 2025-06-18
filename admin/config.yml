@@ -2,6 +2,15 @@ backend:
   name: git-gateway
   branch: main
 
+publish_mode: editorial_workflow
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+deploy_hooks:
+  - https://api.netlify.com/build_hooks/6852d1688fb998336c771029
+
 media_folder: "assets/imgs"
 public_folder: "assets/imgs"
 
