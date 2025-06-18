@@ -12,7 +12,7 @@ collections:
     files:
       - label: "Homepage Content"
         name: "homepage"
-        file: "content/homepage.json"
+        file: "../content/homepage.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -45,7 +45,7 @@ collections:
     files:
       - label: "About Us Content"
         name: "about"
-        file: "content/about.json"
+        file: "../content/about.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -69,7 +69,7 @@ collections:
     files:
       - label: "Contact Page Content"
         name: "contact_page"
-        file: "content/contact-content.json"
+        file: "../content/contact-content.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -93,7 +93,7 @@ collections:
     files:
       - label: "Plumbing Content"
         name: "plumbing"
-        file: "content/plumbing.json"
+        file: "../content/plumbing.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -124,7 +124,7 @@ collections:
     files:
       - label: "Sewer Services Content"
         name: "sewer_services"
-        file: "content/sewer-services.json"
+        file: "../content/sewer-services.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -155,7 +155,7 @@ collections:
     files:
       - label: "Drain Services Content"
         name: "drain_services"
-        file: "content/drain-services.json"
+        file: "../content/drain-services.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -186,7 +186,7 @@ collections:
     files:
       - label: "Sewer & Drain Content"
         name: "sewer_drain"
-        file: "content/sewer-drain.json"
+        file: "../content/sewer-drain.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -218,7 +218,7 @@ collections:
     files:
       - label: "Contact Information"
         name: "contact_settings"
-        file: "content/contact.json"
+        file: "../content/contact.json"
         fields:
           - { label: "Emergency Phone", name: "emergency_phone", widget: "string", default: "(866) 374-0402" }
           - { label: "Main Phone", name: "main_phone", widget: "string", default: "(813) 378-3882" }
@@ -230,7 +230,7 @@ collections:
       
       - label: "Website Images"
         name: "images"
-        file: "content/images.json"
+        file: "../content/images.json"
         fields:
           - { label: "Main Logo", name: "main_logo", widget: "image", default: "../assets/imgs/AGP-logo.png" }
           - { label: "Footer Logo", name: "footer_logo", widget: "image", default: "../assets/imgs/AGP-logo-no-title.png" }
@@ -239,7 +239,7 @@ collections:
 
       - label: "Social Media Links"
         name: "social"
-        file: "content/social.json"
+        file: "../content/social.json"
         fields:
           - { label: "Facebook URL", name: "facebook", widget: "string", default: "https://www.facebook.com/AmericanGulfPlumbing" }
           - { label: "Instagram URL", name: "instagram", widget: "string", default: "https://www.instagram.com/americangulfplumbing" }
