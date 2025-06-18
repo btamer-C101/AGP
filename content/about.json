@@ -1,1 +1,13 @@
-{}
+{
+  "hero": {
+    "label": "kjhkk",
+    "title": "kjkhkhkh",
+    "image": "/assets/imgs/sewer-drain-hero.jpg"
+  },
+  "content": {
+    "title": "hhh",
+    "paragraph1": "hhh",
+    "paragraph2": "jjj",
+    "paragraph3": "jjjj"
+  }
+}
