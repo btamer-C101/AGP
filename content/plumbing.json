@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "hero_label": "COMMERCIAL PLUMBING",
+    "hero_title": "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust",
+    "background_image": "/assets/imgs/commercial-plumbing-hero.jpg"
+  },
+  "services_overview": {
+    "section_label": "WHAT WE DO",
+    "section_title": "Comprehensive Plumbing Solutions for Large-Scale Needs",
+    "section_description": "At American Gulf Plumbing, we specialize in providing end-to-end plumbing services for commercial, industrial, and governmental clients across Florida. Our operations are firmly rooted in the B2B sector, supporting businesses, institutions, and developers with code-compliant, high-capacity systems tailored to complex infrastructure demands.",
+    "services_image": "/assets/imgs/commercial-plumbing.jpg"
+  },
+  "main_content": {
+    "content_title": "Lead with AGP — Florida's Full-Service Plumbing Partner",
+    "paragraph_1": "American Gulf Plumbing (AGP) focuses on commercial, industrial, and governmental plumbing—specializing in the complex, large-scale demands of these sectors. Backed by 37 years of legacy through <a href=\"https://apolloconstruction.horizonfederal.com/\">Apollo Construction and Engineering Services</a>, we deliver compliant, high-capacity plumbing systems that are built to last.",
+    "paragraph_2": "Our commercial plumbing services include tenant buildouts, gas piping, grease trap systems, backflow certification, and large-scale drain line replacements. We understand the regulatory requirements of Florida's infrastructure and build with both precision and durability.",
+    "paragraph_3": "More than installers, we are strategic infrastructure partners offering long-term support—preventative maintenance, emergency repairs, and performance audits. We believe reliability begins with trust—and trust is built through infrastructure that performs, day after day."
+  }
+}

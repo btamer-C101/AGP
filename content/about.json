@@ -1,13 +1,13 @@
 {
   "hero": {
-    "label": "kjhkk",
-    "title": "kjkhkhkh",
-    "image": "/assets/imgs/sewer-drain-hero.jpg"
+    "hero_label": "ABOUT US",
+    "hero_title": "Your Trusted Florida Plumbing, Sewer & Drain Experts",
+    "background_image": "/assets/imgs/team-background.jpg"
   },
   "content": {
-    "title": "hhh",
-    "paragraph1": "hhh",
-    "paragraph2": "jjj",
-    "paragraph3": "jjjj"
+    "main_title": "Lead with AGP — Florida's Full-Service Plumbing Partner Backed by Apollo's 37 Years of Trust",
+    "paragraph_1": "With over 37 years of legacy through our parent company, <a href=\"https://apolloconstruction.horizonfederal.com/\">Apollo Construction and Engineering Services</a>, American Gulf Plumbing (AGP) empowers Florida's commercial, industrial, and government sectors with robust, code-compliant, and scalable plumbing systems. Our mission is simple: build for performance, stand by for support, and deliver lasting infrastructure that drives operational continuity.",
+    "paragraph_2": "At AGP, we don't just install plumbing—we build systems designed to perform and endure. With a deep focus on commercial, industrial, and governmental plumbing, our licensed team delivers strategic solutions tailored to complex operational needs. We're proudly woman-owned and family-operated, and we operate with a BBB A+ accreditation. Every job is backed by decades of industry knowledge, precision planning, and a commitment to being a long-term infrastructure partner.",
+    "paragraph_3": "Our Promise? We don't repair and disappear. At AGP, every project is a partnership. Our work doesn't end when the system is installed—we provide 24/7 emergency response, preventative maintenance, and infrastructure audits that keep Florida's essential operations running strong. We believe reliability begins with trust. And trust is built through service that lasts beyond the first call."
   }
 }

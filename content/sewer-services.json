@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "hero_label": "SEWER SERVICES",
+    "hero_title": "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust",
+    "background_image": "/assets/imgs/sewer-services-hero.jpg"
+  },
+  "services_overview": {
+    "section_label": "WHAT WE DO",
+    "section_title": "Comprehensive Sewer Solutions for Commercial & Industrial Facilities",
+    "section_description": "American Gulf Plumbing delivers expert sewer services for Florida's commercial, industrial, and governmental sectors. From new installations to emergency repairs, our certified technicians ensure your sewer systems operate efficiently and meet all regulatory requirements.",
+    "overview_image": "/assets/imgs/sewer-services-overview.jpg"
+  },
+  "main_content": {
+    "content_title": "Expert Sewer Systems Built for Florida's Toughest Environments",
+    "paragraph_1": "American Gulf Plumbing provides complete sewer solutions for commercial, industrial, and government facilities—backed by 37 years of engineering excellence through <a href=\"https://apolloconstruction.horizonfederal.com/\">Apollo Construction and Engineering Services</a>.",
+    "paragraph_2": "From system design and trenchless installations to backflow testing and lift station maintenance, our certified teams deliver solutions that meet code, protect public health, and ensure long-term reliability.",
+    "paragraph_3": "We respond fast to emergencies—but we're built for prevention. Our work includes proactive audits, regulatory compliance, and scalable sewer designs that minimize future risk. When your infrastructure matters, AGP stands ready."
+  }
+}

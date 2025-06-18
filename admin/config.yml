@@ -6,9 +6,9 @@ media_folder: "assets/imgs"
 public_folder: "/assets/imgs"
 
 collections:
-  # Content Data Files (JSON format for easy JavaScript loading)
-  - name: "content"
-    label: "Website Content"
+  # Homepage Content - Detailed Form
+  - name: "homepage"
+    label: "Homepage"
     files:
       - label: "Homepage Content"
         name: "homepage"
@@ -18,27 +18,31 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "label", widget: "string", default: "ABOUT US" }
-              - { label: "Hero Title", name: "title", widget: "text", default: "Florida Plumbing, Sewer & Drain Services Since 1987" }
-              - { label: "Hero Description", name: "description", widget: "text", default: "American Gulf Plumbing (AGP) focus on commercial, industrial, and governmental plumbing, specializing in the complex, large-scale demands of these sectors, delivering sustained solutions that keep operations running." }
-              - { label: "Years in Business", name: "years", widget: "number", default: 37 }
-              - { label: "Hero Image", name: "image", widget: "image", default: "/assets/imgs/van.png" }
-          - label: "Service Areas"
+              - { label: "Hero Label", name: "hero_label", widget: "string", default: "ABOUT US" }
+              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida Plumbing, Sewer & Drain Services Since 1987" }
+              - { label: "Hero Description", name: "hero_description", widget: "text", default: "American Gulf Plumbing (AGP) focus on commercial, industrial, and governmental plumbing, specializing in the complex, large-scale demands of these sectors, delivering sustained solutions that keep operations running." }
+              - { label: "Years in Business", name: "years_stat", widget: "number", default: 37 }
+              - { label: "Hero Image", name: "hero_image", widget: "image", default: "/assets/imgs/van.png" }
+          - label: "Service Areas Section"
             name: "service_areas"
             widget: "object"
             fields:
-              - { label: "Section Label", name: "label", widget: "string", default: "SERVICE AREAS" }
-              - { label: "Section Title", name: "title", widget: "string", default: "Serving Florida With Superior Service" }
-              - { label: "Description", name: "description", widget: "text", default: "our team of dispatchers and fleet of fully-stocked trucks allow us to serve homeowners throughout the greater Florida" }
-              - { label: "Map Image", name: "image", widget: "image", default: "/assets/imgs/service-map.jpg" }
+              - { label: "Section Label", name: "section_label", widget: "string", default: "SERVICE AREAS" }
+              - { label: "Section Title", name: "section_title", widget: "string", default: "Serving Florida With Superior Service" }
+              - { label: "Section Description", name: "section_description", widget: "text", default: "our team of dispatchers and fleet of fully-stocked trucks allow us to serve homeowners throughout the greater Florida" }
+              - { label: "Service Map Image", name: "map_image", widget: "image", default: "/assets/imgs/service-map.jpg" }
           - label: "Services Section"
             name: "services"
             widget: "object"
             fields:
-              - { label: "Section Label", name: "label", widget: "string", default: "WHAT WE DO" }
-              - { label: "Section Title", name: "title", widget: "string", default: "We're The Experts Florida Trusts" }
-              - { label: "Description", name: "description", widget: "text", default: "If you need expert plumbing services in Florida, join the growing number of satisfied clients that have experienced our exceptional service for over 37 years." }
+              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
+              - { label: "Section Title", name: "section_title", widget: "string", default: "We're The Experts Florida Trusts" }
+              - { label: "Section Description", name: "section_description", widget: "text", default: "If you need expert plumbing services in Florida, join the growing number of satisfied clients that have experienced our exceptional service for over 37 years." }
 
+  # About Us Page - Detailed Form  
+  - name: "about"
+    label: "About Us Page"
+    files:
       - label: "About Us Content"
         name: "about"
         file: "content/about.json"
@@ -47,18 +51,78 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "label", widget: "string", default: "ABOUT US" }
-              - { label: "Hero Title", name: "title", widget: "text", default: "Your Trusted Florida Plumbing, Sewer & Drain Experts" }
-              - { label: "Background Image", name: "image", widget: "image", default: "/assets/imgs/team-background.jpg" }
+              - { label: "Hero Label", name: "hero_label", widget: "string", default: "ABOUT US" }
+              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Your Trusted Florida Plumbing, Sewer & Drain Experts" }
+              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/team-background.jpg" }
           - label: "About Content"
             name: "content"
             widget: "object"
             fields:
-              - { label: "Main Title", name: "title", widget: "text", default: "Lead with AGP — Florida's Full-Service Plumbing Partner Backed by Apollo's 37 Years of Trust" }
-              - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
-              - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
-              - { label: "Paragraph 3", name: "paragraph3", widget: "text" }
+              - { label: "Main Title", name: "main_title", widget: "text", default: "Lead with AGP — Florida's Full-Service Plumbing Partner Backed by Apollo's 37 Years of Trust" }
+              - { label: "Paragraph 1", name: "paragraph_1", widget: "text", default: "With over 37 years of legacy through our parent company, Apollo Construction and Engineering Services, American Gulf Plumbing (AGP) empowers Florida's commercial, industrial, and government sectors with robust, code-compliant, and scalable plumbing systems." }
+              - { label: "Paragraph 2", name: "paragraph_2", widget: "text", default: "At AGP, we don't just install plumbing—we build systems designed to perform and endure. With a deep focus on commercial, industrial, and governmental plumbing, our licensed team delivers strategic solutions tailored to complex operational needs." }
+              - { label: "Paragraph 3", name: "paragraph_3", widget: "text", default: "Our Promise? We don't repair and disappear. At AGP, every project is a partnership. Our work doesn't end when the system is installed—we provide 24/7 emergency response, preventative maintenance, and infrastructure audits." }
 
+  # Contact Page
+  - name: "contact"
+    label: "Contact Page"
+    files:
+      - label: "Contact Content"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero Label", name: "hero_label", widget: "string", default: "CONTACT" }
+              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Get in Touch With Our Trusted Plumbing, Sewer & Drain Team Today" }
+              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/contact-background.jpg" }
+          - label: "Contact Information"
+            name: "contact_info"
+            widget: "object"
+            fields:
+              - { label: "Main Title", name: "main_title", widget: "string", default: "We're Here For You Florida." }
+              - { label: "Description", name: "description", widget: "text", default: "No matter what you need, our team is here to help. Send us a message and we'll be in touch as soon as possible. Emergency services available from 7am – 4pm." }
+              - { label: "Service Areas Title", name: "areas_title", widget: "string", default: "Area We Serve." }
+              - { label: "Service Areas List", name: "service_areas", widget: "text", default: "West Central Florida, Hillsborough, Manatee, Sarasota, Pinellas, Pasco" }
+
+  # Service Pages
+  - name: "plumbing"
+    label: "Plumbing Services"
+    files:
+      - label: "Plumbing Content"
+        name: "plumbing"
+        file: "content/plumbing.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Hero Label", name: "hero_label", widget: "string", default: "COMMERCIAL PLUMBING" }
+              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust" }
+              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/commercial-plumbing-hero.jpg" }
+          - label: "Services Overview"
+            name: "services_overview"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
+              - { label: "Section Title", name: "section_title", widget: "text", default: "Comprehensive Plumbing Solutions for Large-Scale Needs" }
+              - { label: "Section Description", name: "section_description", widget: "text", default: "At American Gulf Plumbing, we specialize in providing end-to-end plumbing services for commercial, industrial, and governmental clients across Florida." }
+              - { label: "Services Image", name: "services_image", widget: "image", default: "/assets/imgs/commercial-plumbing.jpg" }
+          - label: "Main Content"
+            name: "main_content"
+            widget: "object"
+            fields:
+              - { label: "Content Title", name: "content_title", widget: "text", default: "Lead with AGP — Florida's Full-Service Plumbing Partner" }
+              - { label: "Paragraph 1", name: "paragraph_1", widget: "text", default: "American Gulf Plumbing (AGP) focuses on commercial, industrial, and governmental plumbing—specializing in the complex, large-scale demands of these sectors." }
+              - { label: "Paragraph 2", name: "paragraph_2", widget: "text", default: "Our commercial plumbing services include tenant buildouts, gas piping, grease trap systems, backflow certification, and large-scale drain line replacements." }
+              - { label: "Paragraph 3", name: "paragraph_3", widget: "text", default: "More than installers, we are strategic infrastructure partners offering long-term support—preventative maintenance, emergency repairs, and performance audits." }
+
+  # Global Settings
+  - name: "settings"
+    label: "Global Settings"
+    files:
       - label: "Contact Information"
         name: "contact"
         file: "content/contact.json"
@@ -70,37 +134,7 @@ collections:
           - { label: "Address Line 2", name: "address2", widget: "string", default: "Ruskin, FL 33570" }
           - { label: "Business Hours", name: "hours", widget: "string", default: "Monday - Friday: 7am - 4pm" }
           - { label: "Emergency Hours", name: "emergency_hours", widget: "string", default: "Emergency Services Available During Operating Hours" }
-
-      - label: "Service Pages"
-        name: "services"
-        file: "content/services.json"
-        fields:
-          - label: "Plumbing Services"
-            name: "plumbing"
-            widget: "object"
-            fields:
-              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust" }
-              - { label: "Main Title", name: "main_title", widget: "text", default: "Lead with AGP — Florida's Full-Service Plumbing Partner" }
-              - { label: "Description", name: "description", widget: "text" }
-          - label: "Sewer Services"
-            name: "sewer"
-            widget: "object"
-            fields:
-              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust" }
-              - { label: "Main Title", name: "main_title", widget: "text", default: "Expert Sewer Systems Built for Florida's Toughest Environments" }
-              - { label: "Description", name: "description", widget: "text" }
-          - label: "Drain Services"
-            name: "drain"
-            widget: "object"
-            fields:
-              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust" }
-              - { label: "Main Title", name: "main_title", widget: "text", default: "Reliable Drain Services for Florida's Demanding Facilities" }
-              - { label: "Description", name: "description", widget: "text" }
-
-  # Media/Images Management
-  - name: "media"
-    label: "Website Images"
-    files:
+      
       - label: "Website Images"
         name: "images"
         file: "content/images.json"
@@ -109,17 +143,9 @@ collections:
           - { label: "Footer Logo", name: "footer_logo", widget: "image", default: "/assets/imgs/AGP-logo-no-title.png" }
           - { label: "Hero Van Image", name: "hero_van", widget: "image", default: "/assets/imgs/van.png" }
           - { label: "Service Map", name: "service_map", widget: "image", default: "/assets/imgs/service-map.jpg" }
-          - { label: "Team Background", name: "team_bg", widget: "image", default: "/assets/imgs/team-background.jpg" }
-          - { label: "Contact Background", name: "contact_bg", widget: "image", default: "/assets/imgs/contact-background.jpg" }
-          - { label: "Plumbing Hero Background", name: "plumbing_bg", widget: "image", default: "/assets/imgs/commercial-plumbing-hero.jpg" }
-          - { label: "Commercial Plumbing Image", name: "commercial_plumbing", widget: "image", default: "/assets/imgs/commercial-plumbing.jpg" }
 
-  # Social Media Links
-  - name: "social"
-    label: "Social Media"
-    files:
       - label: "Social Media Links"
-        name: "social_links"
+        name: "social"
         file: "content/social.json"
         fields:
           - { label: "Facebook URL", name: "facebook", widget: "string", default: "https://www.facebook.com/AmericanGulfPlumbing" }
