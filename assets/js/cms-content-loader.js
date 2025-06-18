@@ -35,6 +35,9 @@ class CMSContentLoader {
             'about.json', 
             'contact.json',
             'plumbing.json',
+            'sewer-services.json',
+            'drain-services.json',
+            'sewer-drain.json',
             'images.json',
             'social.json'
         ];
@@ -77,6 +80,15 @@ class CMSContentLoader {
             case 'plumbing':
                 this.applyPlumbingContent();
                 break;
+            case 'sewer-services':
+                this.applySewerServicesContent();
+                break;
+            case 'drain-services':
+                this.applyDrainServicesContent();
+                break;
+            case 'sewer-drain':
+                this.applySewerDrainContent();
+                break;
         }
     }
 
@@ -95,6 +107,8 @@ class CMSContentLoader {
             return 'sewer-services';
         } else if (path.includes('drain-services.html')) {
             return 'drain-services';
+        } else if (path.includes('sewer-drain')) {
+            return 'sewer-drain';
         }
         return 'unknown';
     }
@@ -183,7 +197,7 @@ class CMSContentLoader {
             this.updateElement('a[href*="instagram"]', social.instagram, 'href');
         }
         
-        if (social.linkedin) {
+        if (social.linkedin && social.linkedin !== "") {
             this.updateElement('a[href*="linkedin"]', social.linkedin, 'href');
         }
     }
@@ -268,7 +282,33 @@ class CMSContentLoader {
         if (!this.contentCache.contact) return;
         console.log('Applying contact content:', this.contentCache.contact);
 
-        // Contact page specific content handled in global content
+        const content = this.contentCache.contact;
+
+        // Hero section
+        if (content.hero) {
+            this.updateElement('.contact-label', content.hero.hero_label);
+            this.updateElement('.contact-hero h1', content.hero.hero_title);
+            
+            if (content.hero.background_image) {
+                const contactHero = document.querySelector('.contact-hero');
+                if (contactHero) {
+                    contactHero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${content.hero.background_image}')`;
+                }
+            }
+        }
+
+        // Contact info
+        if (content.contact_info) {
+            this.updateElement('.contact-info h2', content.contact_info.main_title);
+            
+            const paragraphs = document.querySelectorAll('.contact-info p');
+            if (content.contact_info.description && paragraphs[0]) {
+                paragraphs[0].textContent = content.contact_info.description;
+            }
+            if (content.contact_info.service_areas && paragraphs[1]) {
+                paragraphs[1].innerHTML = content.contact_info.service_areas;
+            }
+        }
     }
 
     applyPlumbingContent() {
@@ -306,6 +346,147 @@ class CMSContentLoader {
             this.updateElement('.plumbing-content h2', content.main_content.content_title);
             
             const paragraphs = document.querySelectorAll('.plumbing-content p');
+            if (content.main_content.paragraph_1 && paragraphs[0]) {
+                paragraphs[0].innerHTML = content.main_content.paragraph_1;
+            }
+            if (content.main_content.paragraph_2 && paragraphs[1]) {
+                paragraphs[1].innerHTML = content.main_content.paragraph_2;
+            }
+            if (content.main_content.paragraph_3 && paragraphs[2]) {
+                paragraphs[2].innerHTML = content.main_content.paragraph_3;
+            }
+        }
+    }
+
+    applySewerServicesContent() {
+        if (!this.contentCache['sewer-services']) return;
+        console.log('Applying sewer services content:', this.contentCache['sewer-services']);
+
+        const content = this.contentCache['sewer-services'];
+
+        // Hero section
+        if (content.hero) {
+            this.updateElement('.sewer-services-label', content.hero.hero_label);
+            this.updateElement('.sewer-services-hero h1', content.hero.hero_title);
+            
+            if (content.hero.background_image) {
+                const sewerHero = document.querySelector('.sewer-services-hero');
+                if (sewerHero) {
+                    sewerHero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${content.hero.background_image}')`;
+                }
+            }
+        }
+
+        // Services overview
+        if (content.services_overview) {
+            this.updateElement('.overview-label', content.services_overview.section_label);
+            this.updateElement('.services-overview h2', content.services_overview.section_title);
+            this.updateElement('.overview-text p', content.services_overview.section_description);
+            
+            if (content.services_overview.overview_image) {
+                this.updateElement('.overview-image img', content.services_overview.overview_image, 'src');
+            }
+        }
+
+        // Main content
+        if (content.main_content) {
+            this.updateElement('.sewer-content h2', content.main_content.content_title);
+            
+            const paragraphs = document.querySelectorAll('.sewer-content p');
+            if (content.main_content.paragraph_1 && paragraphs[0]) {
+                paragraphs[0].innerHTML = content.main_content.paragraph_1;
+            }
+            if (content.main_content.paragraph_2 && paragraphs[1]) {
+                paragraphs[1].innerHTML = content.main_content.paragraph_2;
+            }
+            if (content.main_content.paragraph_3 && paragraphs[2]) {
+                paragraphs[2].innerHTML = content.main_content.paragraph_3;
+            }
+        }
+    }
+
+    applyDrainServicesContent() {
+        if (!this.contentCache['drain-services']) return;
+        console.log('Applying drain services content:', this.contentCache['drain-services']);
+
+        const content = this.contentCache['drain-services'];
+
+        // Hero section
+        if (content.hero) {
+            this.updateElement('.drain-services-label', content.hero.hero_label);
+            this.updateElement('.drain-services-hero h1', content.hero.hero_title);
+            
+            if (content.hero.background_image) {
+                const drainHero = document.querySelector('.drain-services-hero');
+                if (drainHero) {
+                    drainHero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${content.hero.background_image}')`;
+                }
+            }
+        }
+
+        // Services overview
+        if (content.services_overview) {
+            this.updateElement('.overview-label', content.services_overview.section_label);
+            this.updateElement('.services-overview h2', content.services_overview.section_title);
+            this.updateElement('.overview-text p', content.services_overview.section_description);
+            
+            if (content.services_overview.overview_image) {
+                this.updateElement('.overview-image img', content.services_overview.overview_image, 'src');
+            }
+        }
+
+        // Main content
+        if (content.main_content) {
+            this.updateElement('.drain-content h2', content.main_content.content_title);
+            
+            const paragraphs = document.querySelectorAll('.drain-content p');
+            if (content.main_content.paragraph_1 && paragraphs[0]) {
+                paragraphs[0].innerHTML = content.main_content.paragraph_1;
+            }
+            if (content.main_content.paragraph_2 && paragraphs[1]) {
+                paragraphs[1].innerHTML = content.main_content.paragraph_2;
+            }
+            if (content.main_content.paragraph_3 && paragraphs[2]) {
+                paragraphs[2].innerHTML = content.main_content.paragraph_3;
+            }
+        }
+    }
+
+    applySewerDrainContent() {
+        if (!this.contentCache['sewer-drain']) return;
+        console.log('Applying sewer drain content:', this.contentCache['sewer-drain']);
+
+        const content = this.contentCache['sewer-drain'];
+
+        // Hero section
+        if (content.hero) {
+            this.updateElement('.sewer-drain-label', content.hero.hero_label);
+            this.updateElement('.sewer-drain-hero h1', content.hero.hero_title);
+            
+            if (content.hero.background_image) {
+                const sewerDrainHero = document.querySelector('.sewer-drain-hero');
+                if (sewerDrainHero) {
+                    sewerDrainHero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${content.hero.background_image}')`;
+                }
+            }
+        }
+
+        // Services overview
+        if (content.services_overview) {
+            this.updateElement('.overview-label', content.services_overview.section_label);
+            this.updateElement('.services-overview h2', content.services_overview.section_title);
+            this.updateElement('.overview-text p', content.services_overview.section_description);
+            
+            if (content.services_overview.overview_image) {
+                this.updateElement('.overview-image img', content.services_overview.overview_image, 'src');
+            }
+        }
+
+        // Main content
+        if (content.main_content) {
+            this.updateElement('.sewer-drain-content h2', content.main_content.content_title);
+            
+            const paragraphs = document.querySelectorAll('.sewer-drain-content p');
             if (content.main_content.paragraph_1 && paragraphs[0]) {
                 paragraphs[0].innerHTML = content.main_content.paragraph_1;
             }
