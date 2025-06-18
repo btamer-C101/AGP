@@ -1,26 +1,34 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Content Manager | American Gulf Plumbing</title>
 </head>
+
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.init();
-    window.netlifyIdentity.on('init', user => {
-      if (!user && window.location.hash.includes('invite_token')) {
-        // Open the signup modal automatically when an invite is present
-        window.netlifyIdentity.open('signup');
-      }
-    });
-  }
-</script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.init();
+      window.netlifyIdentity.on('init', user => {
+        const hash = window.location.hash;
+        if (!user && hash.includes('invite_token')) {
+          // Invitation → show signup
+          window.netlifyIdentity.open('signup');
+        } else if (!user && hash.includes('confirmation_token')) {
+          // Email confirmation → show login (it will auto‐confirm the user)
+          window.netlifyIdentity.open('login');
+        }
+      });
+    }
+  </script>
+
 
 </body>
+
 </html>
