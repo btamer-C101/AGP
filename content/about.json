@@ -2,7 +2,7 @@
   "hero": {
     "hero_label": "ABOUT US",
     "hero_title": "Your Plumbing, Sewer & Drain Experts",
-    "background_image": "../assets/imgs/team-background.jpg"
+    "background_image": "/assets/imgs/drain-cleaning.jpg"
   },
   "content": {
     "main_title": "Lead with AGP — Florida's Full-Service Plumbing Partner Backed by Apollo's 37 Years of Trust",
