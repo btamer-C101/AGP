@@ -2,13 +2,13 @@
   "hero": {
     "hero_label": "DRAIN SERVICES",
     "hero_title": "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust",
-    "background_image": "../assets/imgs/drain-services-hero.jpg"
+    "background_image": "/assets/imgs/drain-services-hero.jpg"
   },
   "services_overview": {
     "section_label": "WHAT WE DO",
     "section_title": "Professional Drain Solutions for Commercial & Industrial Facilities",
     "section_description": "American Gulf Plumbing specializes in comprehensive drain services for Florida's commercial, industrial, and governmental sectors. Our advanced drain cleaning, repair, and maintenance services ensure optimal flow and prevent costly backups in your facility.",
-    "overview_image": "../assets/imgs/drain-cleaning.jpg"
+    "overview_image": "/assets/imgs/drain-cleaning.jpg"
   },
   "main_content": {
     "content_title": "Reliable Drain Services for Florida's Demanding Facilities",
