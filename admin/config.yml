@@ -18,33 +18,105 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "hero_label", widget: "string", default: "ABOUT US" }
-              - { label: "Hero Title", name: "hero_title", widget: "text", default: "Florida Plumbing, Sewer & Drain Services Since 1987" }
-              - { label: "Hero Description", name: "hero_description", widget: "text" }
-              - { label: "Years in Business", name: "years_stat", widget: "number", default: 37 }
-              - { label: "Hero Image", name: "hero_image", widget: "image", default: "/assets/imgs/van.png" }
+              - {
+                  label: "Hero Label",
+                  name: "hero_label",
+                  widget: "string",
+                  default: "ABOUT US",
+                }
+              - {
+                  label: "Hero Title",
+                  name: "hero_title",
+                  widget: "text",
+                  default: "Florida Plumbing, Sewer & Drain Services Since 1987",
+                }
+              - {
+                  label: "Hero Description",
+                  name: "hero_description",
+                  widget: "text",
+                }
+              - {
+                  label: "Years in Business",
+                  name: "years_stat",
+                  widget: "number",
+                  default: 37,
+                }
+              - {
+                  label: "Hero Image",
+                  name: "hero_image",
+                  widget: "image",
+                  default: "/assets/imgs/van.png",
+                }
           - label: "Service Areas Section"
             name: "service_areas"
             widget: "object"
             fields:
-              - { label: "Section Label", name: "section_label", widget: "string", default: "SERVICE AREAS" }
-              - { label: "Section Title", name: "section_title", widget: "string", default: "Serving Florida With Superior Service" }
-              - { label: "Section Description", name: "section_description", widget: "text" }
-              - { label: "Service Map Image", name: "map_image", widget: "image", default: "/assets/imgs/service-map.jpg" }
+              - {
+                  label: "Section Label",
+                  name: "section_label",
+                  widget: "string",
+                  default: "SERVICE AREAS",
+                }
+              - {
+                  label: "Section Title",
+                  name: "section_title",
+                  widget: "string",
+                  default: "Serving Florida With Superior Service",
+                }
+              - {
+                  label: "Section Description",
+                  name: "section_description",
+                  widget: "text",
+                }
+              - {
+                  label: "Service Map Image",
+                  name: "map_image",
+                  widget: "image",
+                  default: "/assets/imgs/service-map.jpg",
+                }
           - label: "Services Section"
             name: "services"
             widget: "object"
             fields:
-              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
-              - { label: "Section Title", name: "section_title", widget: "string", default: "We're The Experts Florida Trusts" }
-              - { label: "Section Description", name: "section_description", widget: "text" }
+              - {
+                  label: "Section Label",
+                  name: "section_label",
+                  widget: "string",
+                  default: "WHAT WE DO",
+                }
+              - {
+                  label: "Section Title",
+                  name: "section_title",
+                  widget: "string",
+                  default: "We're The Experts Florida Trusts",
+                }
+              - {
+                  label: "Section Description",
+                  name: "section_description",
+                  widget: "text",
+                }
           - label: "Contact Information"
             name: "contact"
             widget: "object"
             fields:
-              - { label: "Emergency Phone", name: "emergency_phone", widget: "string", default: "(866) 374-0402" }
-              - { label: "Main Phone", name: "main_phone", widget: "string", default: "(813) 378-3882" }
-              - { label: "Address", name: "address", widget: "text", default: "1821 36th Street SE, Ruskin, FL 33570" }
+              - {
+                  label: "Emergency Phone",
+                  name: "emergency_phone",
+                  widget: "string",
+                  default: "(866) 374-0402",
+                }
+              - {
+                  label: "Main Phone",
+                  name: "main_phone",
+                  widget: "string",
+                  default: "(813) 378-3882",
+                }
+              - {
+                  label: "Address",
+                  name: "address",
+                  widget: "text",
+                  default: "1821 36th Street SE, Ruskin, FL 33570",
+                }
 
   # About Us Page
   - name: "about"
@@ -58,9 +130,19 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "hero_label", widget: "string", default: "ABOUT US" }
+              - {
+                  label: "Hero Label",
+                  name: "hero_label",
+                  widget: "string",
+                  default: "ABOUT US",
+                }
               - { label: "Hero Title", name: "hero_title", widget: "text" }
-              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/team-background.jpg" }
+              - {
+                  label: "Background Image",
+                  name: "background_image",
+                  widget: "image",
+                  default: "/assets/imgs/team-background.jpg",
+                }
           - label: "About Content"
             name: "content"
             widget: "object"
@@ -82,17 +164,41 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "hero_label", widget: "string", default: "CONTACT" }
+              - {
+                  label: "Hero Label",
+                  name: "hero_label",
+                  widget: "string",
+                  default: "CONTACT",
+                }
               - { label: "Hero Title", name: "hero_title", widget: "text" }
-              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/contact-background.jpg" }
+              - {
+                  label: "Background Image",
+                  name: "background_image",
+                  widget: "image",
+                  default: "/assets/imgs/contact-background.jpg",
+                }
           - label: "Contact Information"
             name: "contact_info"
             widget: "object"
             fields:
-              - { label: "Main Title", name: "main_title", widget: "string", default: "We're Here For You Florida." }
+              - {
+                  label: "Main Title",
+                  name: "main_title",
+                  widget: "string",
+                  default: "We're Here For You Florida.",
+                }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Service Areas Title", name: "areas_title", widget: "string", default: "Area We Serve." }
-              - { label: "Service Areas List", name: "service_areas", widget: "text" }
+              - {
+                  label: "Service Areas Title",
+                  name: "areas_title",
+                  widget: "string",
+                  default: "Area We Serve.",
+                }
+              - {
+                  label: "Service Areas List",
+                  name: "service_areas",
+                  widget: "text",
+                }
 
   # Plumbing Services Page
   - name: "plumbing"
@@ -106,22 +212,54 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "hero_label", widget: "string", default: "COMMERCIAL PLUMBING" }
+              - {
+                  label: "Hero Label",
+                  name: "hero_label",
+                  widget: "string",
+                  default: "COMMERCIAL PLUMBING",
+                }
               - { label: "Hero Title", name: "hero_title", widget: "text" }
-              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/commercial-plumbing-hero.jpg" }
+              - {
+                  label: "Background Image",
+                  name: "background_image",
+                  widget: "image",
+                  default: "/assets/imgs/commercial-plumbing-hero.jpg",
+                }
           - label: "Services Overview"
             name: "services_overview"
             widget: "object"
             fields:
-              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
-              - { label: "Section Title", name: "section_title", widget: "text" }
-              - { label: "Section Description", name: "section_description", widget: "text" }
-              - { label: "Services Image", name: "services_image", widget: "image", default: "/assets/imgs/commercial-plumbing.jpg" }
+              - {
+                  label: "Section Label",
+                  name: "section_label",
+                  widget: "string",
+                  default: "WHAT WE DO",
+                }
+              - {
+                  label: "Section Title",
+                  name: "section_title",
+                  widget: "text",
+                }
+              - {
+                  label: "Section Description",
+                  name: "section_description",
+                  widget: "text",
+                }
+              - {
+                  label: "Services Image",
+                  name: "services_image",
+                  widget: "image",
+                  default: "/assets/imgs/commercial-plumbing.jpg",
+                }
           - label: "Main Content"
             name: "main_content"
             widget: "object"
             fields:
-              - { label: "Content Title", name: "content_title", widget: "text" }
+              - {
+                  label: "Content Title",
+                  name: "content_title",
+                  widget: "text",
+                }
               - { label: "Paragraph 1", name: "paragraph_1", widget: "text" }
               - { label: "Paragraph 2", name: "paragraph_2", widget: "text" }
               - { label: "Paragraph 3", name: "paragraph_3", widget: "text" }
@@ -138,22 +276,54 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "hero_label", widget: "string", default: "SEWER SERVICES" }
+              - {
+                  label: "Hero Label",
+                  name: "hero_label",
+                  widget: "string",
+                  default: "SEWER SERVICES",
+                }
               - { label: "Hero Title", name: "hero_title", widget: "text" }
-              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/sewer-services-hero.jpg" }
+              - {
+                  label: "Background Image",
+                  name: "background_image",
+                  widget: "image",
+                  default: "/assets/imgs/sewer-services-hero.jpg",
+                }
           - label: "Services Overview"
             name: "services_overview"
             widget: "object"
             fields:
-              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
-              - { label: "Section Title", name: "section_title", widget: "text" }
-              - { label: "Section Description", name: "section_description", widget: "text" }
-              - { label: "Overview Image", name: "overview_image", widget: "image", default: "/assets/imgs/sewer-services-overview.jpg" }
+              - {
+                  label: "Section Label",
+                  name: "section_label",
+                  widget: "string",
+                  default: "WHAT WE DO",
+                }
+              - {
+                  label: "Section Title",
+                  name: "section_title",
+                  widget: "text",
+                }
+              - {
+                  label: "Section Description",
+                  name: "section_description",
+                  widget: "text",
+                }
+              - {
+                  label: "Overview Image",
+                  name: "overview_image",
+                  widget: "image",
+                  default: "/assets/imgs/sewer-services-overview.jpg",
+                }
           - label: "Main Content"
             name: "main_content"
             widget: "object"
             fields:
-              - { label: "Content Title", name: "content_title", widget: "text" }
+              - {
+                  label: "Content Title",
+                  name: "content_title",
+                  widget: "text",
+                }
               - { label: "Paragraph 1", name: "paragraph_1", widget: "text" }
               - { label: "Paragraph 2", name: "paragraph_2", widget: "text" }
               - { label: "Paragraph 3", name: "paragraph_3", widget: "text" }
@@ -170,22 +340,54 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "hero_label", widget: "string", default: "DRAIN SERVICES" }
+              - {
+                  label: "Hero Label",
+                  name: "hero_label",
+                  widget: "string",
+                  default: "DRAIN SERVICES",
+                }
               - { label: "Hero Title", name: "hero_title", widget: "text" }
-              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/drain-services-hero.jpg" }
+              - {
+                  label: "Background Image",
+                  name: "background_image",
+                  widget: "image",
+                  default: "/assets/imgs/drain-services-hero.jpg",
+                }
           - label: "Services Overview"
             name: "services_overview"
             widget: "object"
             fields:
-              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
-              - { label: "Section Title", name: "section_title", widget: "text" }
-              - { label: "Section Description", name: "section_description", widget: "text" }
-              - { label: "Overview Image", name: "overview_image", widget: "image", default: "/assets/imgs/drain-cleaning.jpg" }
+              - {
+                  label: "Section Label",
+                  name: "section_label",
+                  widget: "string",
+                  default: "WHAT WE DO",
+                }
+              - {
+                  label: "Section Title",
+                  name: "section_title",
+                  widget: "text",
+                }
+              - {
+                  label: "Section Description",
+                  name: "section_description",
+                  widget: "text",
+                }
+              - {
+                  label: "Overview Image",
+                  name: "overview_image",
+                  widget: "image",
+                  default: "/assets/imgs/drain-cleaning.jpg",
+                }
           - label: "Main Content"
             name: "main_content"
             widget: "object"
             fields:
-              - { label: "Content Title", name: "content_title", widget: "text" }
+              - {
+                  label: "Content Title",
+                  name: "content_title",
+                  widget: "text",
+                }
               - { label: "Paragraph 1", name: "paragraph_1", widget: "text" }
               - { label: "Paragraph 2", name: "paragraph_2", widget: "text" }
               - { label: "Paragraph 3", name: "paragraph_3", widget: "text" }
@@ -202,22 +404,54 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Hero Label", name: "hero_label", widget: "string", default: "SEWER & DRAIN SERVICES" }
+              - {
+                  label: "Hero Label",
+                  name: "hero_label",
+                  widget: "string",
+                  default: "SEWER & DRAIN SERVICES",
+                }
               - { label: "Hero Title", name: "hero_title", widget: "text" }
-              - { label: "Background Image", name: "background_image", widget: "image", default: "/assets/imgs/sewer-drain-hero.jpg" }
+              - {
+                  label: "Background Image",
+                  name: "background_image",
+                  widget: "image",
+                  default: "/assets/imgs/sewer-drain-hero.jpg",
+                }
           - label: "Services Overview"
             name: "services_overview"
             widget: "object"
             fields:
-              - { label: "Section Label", name: "section_label", widget: "string", default: "WHAT WE DO" }
-              - { label: "Section Title", name: "section_title", widget: "text" }
-              - { label: "Section Description", name: "section_description", widget: "text" }
-              - { label: "Overview Image", name: "overview_image", widget: "image", default: "/assets/imgs/sewer-drain-overview.jpg" }
+              - {
+                  label: "Section Label",
+                  name: "section_label",
+                  widget: "string",
+                  default: "WHAT WE DO",
+                }
+              - {
+                  label: "Section Title",
+                  name: "section_title",
+                  widget: "text",
+                }
+              - {
+                  label: "Section Description",
+                  name: "section_description",
+                  widget: "text",
+                }
+              - {
+                  label: "Overview Image",
+                  name: "overview_image",
+                  widget: "image",
+                  default: "/assets/imgs/sewer-drain-overview.jpg",
+                }
           - label: "Main Content"
             name: "main_content"
             widget: "object"
             fields:
-              - { label: "Content Title", name: "content_title", widget: "text" }
+              - {
+                  label: "Content Title",
+                  name: "content_title",
+                  widget: "text",
+                }
               - { label: "Paragraph 1", name: "paragraph_1", widget: "text" }
               - { label: "Paragraph 2", name: "paragraph_2", widget: "text" }
               - { label: "Paragraph 3", name: "paragraph_3", widget: "text" }
@@ -230,14 +464,32 @@ collections:
         name: "site_settings"
         file: "_data/settings.yml"
         fields:
-          - { label: "Site Title", name: "site_title", widget: "string", default: "American Gulf Plumbing" }
-          - { label: "Site Description", name: "site_description", widget: "text" }
-          - { label: "Company Tagline", name: "tagline", widget: "string", default: "Nobody wows clients like we do." }
+          - {
+              label: "Site Title",
+              name: "site_title",
+              widget: "string",
+              default: "American Gulf Plumbing",
+            }
+          - {
+              label: "Site Description",
+              name: "site_description",
+              widget: "text",
+            }
+          - {
+              label: "Company Tagline",
+              name: "tagline",
+              widget: "string",
+              default: "Nobody wows clients like we do.",
+            }
           - label: "Contact Information"
             name: "contact"
             widget: "object"
             fields:
-              - { label: "Emergency Phone", name: "emergency_phone", widget: "string" }
+              - {
+                  label: "Emergency Phone",
+                  name: "emergency_phone",
+                  widget: "string",
+                }
               - { label: "Main Phone", name: "main_phone", widget: "string" }
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Address", name: "address", widget: "text" }
@@ -255,3 +507,323 @@ collections:
             fields:
               - { label: "Main Logo", name: "main_logo", widget: "image" }
               - { label: "Footer Logo", name: "footer_logo", widget: "image" }
+
+              # Content Data Files (JSON format for easy JavaScript loading)
+  - name: "content"
+    label: "Website Content"
+    files:
+      - label: "Homepage Content"
+        name: "homepage"
+        file: "content/homepage.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {
+                  label: "Hero Label",
+                  name: "label",
+                  widget: "string",
+                  default: "ABOUT US",
+                }
+              - {
+                  label: "Hero Title",
+                  name: "title",
+                  widget: "text",
+                  default: "Florida Plumbing, Sewer & Drain Services Since 1987",
+                }
+              - {
+                  label: "Hero Description",
+                  name: "description",
+                  widget: "text",
+                  default: "American Gulf Plumbing (AGP) focus on commercial, industrial, and governmental plumbing, specializing in the complex, large-scale demands of these sectors, delivering sustained solutions that keep operations running.",
+                }
+              - {
+                  label: "Years in Business",
+                  name: "years",
+                  widget: "number",
+                  default: 37,
+                }
+              - {
+                  label: "Hero Image",
+                  name: "image",
+                  widget: "image",
+                  default: "/assets/imgs/van.png",
+                }
+          - label: "Service Areas"
+            name: "service_areas"
+            widget: "object"
+            fields:
+              - {
+                  label: "Section Label",
+                  name: "label",
+                  widget: "string",
+                  default: "SERVICE AREAS",
+                }
+              - {
+                  label: "Section Title",
+                  name: "title",
+                  widget: "string",
+                  default: "Serving Florida With Superior Service",
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "text",
+                  default: "our team of dispatchers and fleet of fully-stocked trucks allow us to serve homeowners throughout the greater Florida",
+                }
+              - {
+                  label: "Map Image",
+                  name: "image",
+                  widget: "image",
+                  default: "/assets/imgs/service-map.jpg",
+                }
+          - label: "Services Section"
+            name: "services"
+            widget: "object"
+            fields:
+              - {
+                  label: "Section Label",
+                  name: "label",
+                  widget: "string",
+                  default: "WHAT WE DO",
+                }
+              - {
+                  label: "Section Title",
+                  name: "title",
+                  widget: "string",
+                  default: "We're The Experts Florida Trusts",
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "text",
+                  default: "If you need expert plumbing services in Florida, join the growing number of satisfied clients that have experienced our exceptional service for over 37 years.",
+                }
+
+      - label: "About Us Content"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {
+                  label: "Hero Label",
+                  name: "label",
+                  widget: "string",
+                  default: "ABOUT US",
+                }
+              - {
+                  label: "Hero Title",
+                  name: "title",
+                  widget: "text",
+                  default: "Your Trusted Florida Plumbing, Sewer & Drain Experts",
+                }
+              - {
+                  label: "Background Image",
+                  name: "image",
+                  widget: "image",
+                  default: "/assets/imgs/team-background.jpg",
+                }
+          - label: "About Content"
+            name: "content"
+            widget: "object"
+            fields:
+              - {
+                  label: "Main Title",
+                  name: "title",
+                  widget: "text",
+                  default: "Lead with AGP — Florida's Full-Service Plumbing Partner Backed by Apollo's 37 Years of Trust",
+                }
+              - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+              - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+              - { label: "Paragraph 3", name: "paragraph3", widget: "text" }
+
+      - label: "Contact Information"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - {
+              label: "Emergency Phone",
+              name: "emergency_phone",
+              widget: "string",
+              default: "(866) 374-0402",
+            }
+          - {
+              label: "Main Phone",
+              name: "main_phone",
+              widget: "string",
+              default: "(813) 378-3882",
+            }
+          - {
+              label: "Email",
+              name: "email",
+              widget: "string",
+              default: "info@americangulfplumbing.com",
+            }
+          - {
+              label: "Address Line 1",
+              name: "address1",
+              widget: "string",
+              default: "1821 36th Street SE",
+            }
+          - {
+              label: "Address Line 2",
+              name: "address2",
+              widget: "string",
+              default: "Ruskin, FL 33570",
+            }
+          - {
+              label: "Business Hours",
+              name: "hours",
+              widget: "string",
+              default: "Monday - Friday: 7am - 4pm",
+            }
+          - {
+              label: "Emergency Hours",
+              name: "emergency_hours",
+              widget: "string",
+              default: "Emergency Services Available During Operating Hours",
+            }
+
+      - label: "Service Pages"
+        name: "services"
+        file: "content/services.json"
+        fields:
+          - label: "Plumbing Services"
+            name: "plumbing"
+            widget: "object"
+            fields:
+              - {
+                  label: "Hero Title",
+                  name: "hero_title",
+                  widget: "text",
+                  default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust",
+                }
+              - {
+                  label: "Main Title",
+                  name: "main_title",
+                  widget: "text",
+                  default: "Lead with AGP — Florida's Full-Service Plumbing Partner",
+                }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Sewer Services"
+            name: "sewer"
+            widget: "object"
+            fields:
+              - {
+                  label: "Hero Title",
+                  name: "hero_title",
+                  widget: "text",
+                  default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust",
+                }
+              - {
+                  label: "Main Title",
+                  name: "main_title",
+                  widget: "text",
+                  default: "Expert Sewer Systems Built for Florida's Toughest Environments",
+                }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Drain Services"
+            name: "drain"
+            widget: "object"
+            fields:
+              - {
+                  label: "Hero Title",
+                  name: "hero_title",
+                  widget: "text",
+                  default: "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust",
+                }
+              - {
+                  label: "Main Title",
+                  name: "main_title",
+                  widget: "text",
+                  default: "Reliable Drain Services for Florida's Demanding Facilities",
+                }
+              - { label: "Description", name: "description", widget: "text" }
+
+  # Media/Images Management
+  - name: "media"
+    label: "Website Images"
+    files:
+      - label: "Website Images"
+        name: "images"
+        file: "content/images.json"
+        fields:
+          - {
+              label: "Main Logo",
+              name: "main_logo",
+              widget: "image",
+              default: "/assets/imgs/AGP-logo.png",
+            }
+          - {
+              label: "Footer Logo",
+              name: "footer_logo",
+              widget: "image",
+              default: "/assets/imgs/AGP-logo-no-title.png",
+            }
+          - {
+              label: "Hero Van Image",
+              name: "hero_van",
+              widget: "image",
+              default: "/assets/imgs/van.png",
+            }
+          - {
+              label: "Service Map",
+              name: "service_map",
+              widget: "image",
+              default: "/assets/imgs/service-map.jpg",
+            }
+          - {
+              label: "Team Background",
+              name: "team_bg",
+              widget: "image",
+              default: "/assets/imgs/team-background.jpg",
+            }
+          - {
+              label: "Contact Background",
+              name: "contact_bg",
+              widget: "image",
+              default: "/assets/imgs/contact-background.jpg",
+            }
+          - {
+              label: "Plumbing Hero Background",
+              name: "plumbing_bg",
+              widget: "image",
+              default: "/assets/imgs/commercial-plumbing-hero.jpg",
+            }
+          - {
+              label: "Commercial Plumbing Image",
+              name: "commercial_plumbing",
+              widget: "image",
+              default: "/assets/imgs/commercial-plumbing.jpg",
+            }
+
+  # Social Media Links
+  - name: "social"
+    label: "Social Media"
+    files:
+      - label: "Social Media Links"
+        name: "social_links"
+        file: "content/social.json"
+        fields:
+          - {
+              label: "Facebook URL",
+              name: "facebook",
+              widget: "string",
+              default: "https://www.facebook.com/AmericanGulfPlumbing",
+            }
+          - {
+              label: "Instagram URL",
+              name: "instagram",
+              widget: "string",
+              default: "https://www.instagram.com/americangulfplumbing",
+            }
+          - {
+              label: "LinkedIn URL",
+              name: "linkedin",
+              widget: "string",
+              default: "",
+            }
