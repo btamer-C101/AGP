@@ -14,7 +14,7 @@ deploy_hooks:
   - https://api.netlify.com/build_hooks/6852d1688fb998336c771029
 
 media_folder: "assets/imgs"
-public_folder: "assets/imgs"
+public_folder: "/assets/imgs"
 
 collections:
   # Homepage Content
@@ -23,7 +23,7 @@ collections:
     files:
       - label: "Homepage Content"
         name: "homepage"
-        file: "content/homepage.json"
+        file: "/content/homepage.json"
         fields:
           - label: "Hero Section"
             name: "hero"
