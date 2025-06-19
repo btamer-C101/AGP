@@ -8,7 +8,7 @@ class EnhancedCMSContentLoader {
         this.debug = this.isLocalhost();
         this.retryAttempts = 3;
         this.retryDelay = 1000; // 1 second
-        
+
         if (this.debug) {
             console.log('🔧 CMS Loader Debug Mode Active');
             console.log('📁 Base Path:', this.basePath);
@@ -19,17 +19,17 @@ class EnhancedCMSContentLoader {
     getBasePath() {
         const path = window.location.pathname.toLowerCase();
         const hostname = window.location.hostname;
-        
+
         // For Netlify and most hosting providers, use absolute path
         if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
             return '/content/';
         }
-        
+
         // Local development path detection
         if (path.includes('/assets/html/')) {
             return '../../content/';
         }
-        
+
         return 'content/';
     }
 
@@ -53,11 +53,11 @@ class EnhancedCMSContentLoader {
                 cache: 'no-store',
                 ...options
             });
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
-            
+
             return response;
         } catch (error) {
             if (attempt < this.retryAttempts) {
@@ -79,19 +79,19 @@ class EnhancedCMSContentLoader {
         try {
             // Clear any existing cache
             this.contentCache = {};
-            
+
             if (this.debug) {
                 console.log('🚀 Starting CMS content loading...');
             }
-            
+
             await this.loadAllContent();
             await this.applyContentToPage();
-            
+
             if (this.debug) {
                 console.log('✅ CMS content loaded successfully');
                 console.log('📦 Loaded content:', Object.keys(this.contentCache));
             }
-            
+
             this.addDevelopmentTools();
         } catch (error) {
             console.error('❌ CMS content loading failed:', error);
@@ -121,9 +121,9 @@ class EnhancedCMSContentLoader {
                 const url = this.getCacheBustedUrl(this.basePath + file);
                 const response = await this.fetchWithRetry(url);
                 const data = await response.json();
-                
+
                 this.contentCache[key] = data;
-                
+
                 if (this.debug) {
                     console.log(`✅ Loaded ${key}:`, data);
                 }
@@ -140,14 +140,14 @@ class EnhancedCMSContentLoader {
 
     async applyContentToPage() {
         const currentPage = this.getCurrentPage();
-        
+
         if (this.debug) {
             console.log('📄 Applying content for page:', currentPage);
         }
-        
+
         // Apply global content first
         this.applyGlobalContent();
-        
+
         // Apply page-specific content
         switch (currentPage) {
             case 'homepage':
@@ -181,7 +181,7 @@ class EnhancedCMSContentLoader {
     getCurrentPage() {
         const path = window.location.pathname.toLowerCase();
         const filename = path.split('/').pop() || 'index.html';
-        
+
         // More robust page detection
         if (path === '/' || filename === 'index.html' || filename === '') {
             return 'homepage';
@@ -198,7 +198,7 @@ class EnhancedCMSContentLoader {
         } else if (filename.includes('sewer-drain')) {
             return 'sewer-drain';
         }
-        
+
         return 'unknown';
     }
 
@@ -210,16 +210,16 @@ class EnhancedCMSContentLoader {
             }
             return false;
         }
-        
+
         const elements = document.querySelectorAll(selector);
-        
+
         if (elements.length === 0) {
             if (this.debug) {
                 console.warn(`⚠️ No elements found for selector: ${selector}`);
             }
             return false;
         }
-        
+
         let updateCount = 0;
         elements.forEach(el => {
             try {
@@ -258,11 +258,11 @@ class EnhancedCMSContentLoader {
                 }
             }
         });
-        
+
         if (this.debug && updateCount > 0) {
             console.log(`✅ Updated ${updateCount} element(s) with selector: ${selector}`);
         }
-        
+
         return updateCount > 0;
     }
 
@@ -271,34 +271,34 @@ class EnhancedCMSContentLoader {
         // Contact information
         if (this.contentCache.contact) {
             const contact = this.contentCache.contact;
-            
+
             if (contact.emergency_phone) {
                 this.updateElement('.phone-number', contact.emergency_phone, 'both');
                 this.updateElement('a[href*="866"]', contact.emergency_phone, 'both');
             }
-            
+
             if (contact.main_phone) {
                 this.updateElement('.footer-phone', contact.main_phone, 'both');
                 this.updateElement('a[href*="813"]', contact.main_phone, 'both');
             }
-            
+
             if (contact.email) {
                 this.updateElement('a[href*="mailto"]', `mailto:${contact.email}`, 'href');
             }
-            
+
             if (contact.address1 && contact.address2) {
                 this.updateElement('.location p', `${contact.address1},<br>${contact.address2}`, 'html');
             }
-            
+
             if (contact.hours) {
                 this.updateElement('.hours p:first-child', contact.hours);
             }
         }
-        
+
         // Images
         if (this.contentCache.images) {
             const images = this.contentCache.images;
-            
+
             Object.entries(images).forEach(([key, src]) => {
                 // Try multiple selectors for each image type
                 const selectors = this.getImageSelectors(key);
@@ -307,11 +307,11 @@ class EnhancedCMSContentLoader {
                 });
             });
         }
-        
+
         // Social media links
         if (this.contentCache.social) {
             const social = this.contentCache.social;
-            
+
             if (social.facebook) {
                 this.updateElement('a[href*="facebook"]', social.facebook, 'href');
             }
@@ -331,7 +331,7 @@ class EnhancedCMSContentLoader {
             'hero_van': ['.hero-image img'],
             'service_map': ['.service-map img']
         };
-        
+
         return selectorMap[imageKey] || [];
     }
 
@@ -339,50 +339,51 @@ class EnhancedCMSContentLoader {
     applyHomepageContent() {
         const content = this.contentCache.homepage;
         if (!content) return;
-        
+
         if (content.hero) {
             this.updateElement('.hero-label', content.hero.hero_label);
             this.updateElement('.hero-section h1, .hero-title', content.hero.hero_title);
             this.updateElement('.hero-description', content.hero.hero_description);
-            
+
             if (content.hero.years_stat) {
                 this.updateElement('.stat-number', content.hero.years_stat.toString());
             }
         }
-        
+
         if (content.service_areas) {
-            this.updateElement('.service-label', content.service_areas.section_label);
-            this.updateElement('.service-areas h2', content.service_areas.section_title);
-            this.updateElement('.service-areas p', content.service_areas.section_description);
+            // Update these selectors to be more specific
+            this.updateElement('.service-areas .service-label', content.service_areas.section_label);
+            this.updateElement('.service-areas .service-content h2', content.service_areas.section_title);
+            this.updateElement('.service-areas .service-text > p:not(.service-label)', content.service_areas.section_description);
         }
-        
+
         if (content.services) {
             this.updateElement('.section-label', content.services.section_label);
             this.updateElement('.section-heading', content.services.section_title);
-            this.updateElement('.section-content p', content.services.section_description);
+            this.updateElement('.section-content p:not(.section-label)', content.services.section_description);
         }
     }
 
     applyAboutContent() {
         const content = this.contentCache.about;
         if (!content) return;
-        
+
         if (content.hero) {
             this.updateElement('.about-label', content.hero.hero_label);
             this.updateElement('.about-hero h1', content.hero.hero_title);
-            
+
             if (content.hero.background_image) {
                 const heroElement = document.querySelector('.about-hero');
                 if (heroElement) {
-                    heroElement.style.backgroundImage = 
+                    heroElement.style.backgroundImage =
                         `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${content.hero.background_image}')`;
                 }
             }
         }
-        
+
         if (content.content) {
             this.updateElement('.about-content h2', content.content.main_title);
-            
+
             const paragraphs = document.querySelectorAll('.about-content p');
             [content.content.paragraph_1, content.content.paragraph_2, content.content.paragraph_3]
                 .forEach((text, index) => {
@@ -396,16 +397,16 @@ class EnhancedCMSContentLoader {
     applyContactPageContent() {
         const content = this.contentCache['contact-content'] || this.contentCache.contact;
         if (!content || !content.hero) return;
-        
+
         if (content.hero) {
             this.updateElement('.contact-label', content.hero.hero_label);
             this.updateElement('.contact-hero h1', content.hero.hero_title);
         }
-        
+
         if (content.contact_info) {
             this.updateElement('.contact-info h2', content.contact_info.main_title);
             this.updateElement('.contact-info p:first-of-type', content.contact_info.description);
-            
+
             if (content.contact_info.service_areas) {
                 this.updateElement('.contact-info p:last-of-type', content.contact_info.service_areas, 'html');
             }
@@ -415,21 +416,21 @@ class EnhancedCMSContentLoader {
     applyPlumbingContent() {
         const content = this.contentCache.plumbing;
         if (!content) return;
-        
+
         if (content.hero) {
             this.updateElement('.plumbing-label', content.hero.hero_label);
             this.updateElement('.plumbing-hero h1', content.hero.hero_title);
         }
-        
+
         if (content.services_overview) {
             this.updateElement('.services-label', content.services_overview.section_label);
             this.updateElement('.plumbing-services h2', content.services_overview.section_title);
             this.updateElement('.services-text p', content.services_overview.section_description);
         }
-        
+
         if (content.main_content) {
             this.updateElement('.plumbing-content h2', content.main_content.content_title);
-            
+
             const paragraphs = document.querySelectorAll('.plumbing-content p');
             [content.main_content.paragraph_1, content.main_content.paragraph_2, content.main_content.paragraph_3]
                 .forEach((text, index) => {
@@ -443,12 +444,12 @@ class EnhancedCMSContentLoader {
     applySewerServicesContent() {
         const content = this.contentCache['sewer-services'];
         if (!content) return;
-        
+
         if (content.hero) {
             this.updateElement('.sewer-services-label', content.hero.hero_label);
             this.updateElement('.sewer-services-hero h1', content.hero.hero_title);
         }
-        
+
         if (content.services_overview) {
             this.updateElement('.overview-label', content.services_overview.section_label);
             this.updateElement('.services-overview h2', content.services_overview.section_title);
@@ -459,12 +460,12 @@ class EnhancedCMSContentLoader {
     applyDrainServicesContent() {
         const content = this.contentCache['drain-services'];
         if (!content) return;
-        
+
         if (content.hero) {
             this.updateElement('.drain-services-label', content.hero.hero_label);
             this.updateElement('.drain-services-hero h1', content.hero.hero_title);
         }
-        
+
         if (content.services_overview) {
             this.updateElement('.overview-label', content.services_overview.section_label);
             this.updateElement('.services-overview h2', content.services_overview.section_title);
@@ -475,12 +476,12 @@ class EnhancedCMSContentLoader {
     applySewerDrainContent() {
         const content = this.contentCache['sewer-drain'];
         if (!content) return;
-        
+
         if (content.hero) {
             this.updateElement('.sewer-drain-label', content.hero.hero_label);
             this.updateElement('.sewer-drain-hero h1', content.hero.hero_title);
         }
-        
+
         if (content.services_overview) {
             this.updateElement('.overview-label', content.services_overview.section_label);
             this.updateElement('.services-overview h2', content.services_overview.section_title);
@@ -491,10 +492,10 @@ class EnhancedCMSContentLoader {
     // Fallback content loading strategy
     async fallbackContentLoading() {
         console.log('🔄 Attempting fallback loading...');
-        
+
         // Try loading from different base paths
         const fallbackPaths = ['/content/', './content/', '../content/', '../../content/'];
-        
+
         for (const path of fallbackPaths) {
             try {
                 const response = await fetch(path + 'homepage.json?t=' + Date.now());
@@ -509,14 +510,14 @@ class EnhancedCMSContentLoader {
                 continue;
             }
         }
-        
+
         console.error('❌ All fallback loading strategies failed');
     }
 
     // Development tools
     addDevelopmentTools() {
         if (!this.debug) return;
-        
+
         // Add refresh button for development
         const refreshBtn = document.createElement('button');
         refreshBtn.textContent = '🔄 Refresh CMS Content';
@@ -534,14 +535,14 @@ class EnhancedCMSContentLoader {
             font-size: 14px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         `;
-        
+
         refreshBtn.addEventListener('click', () => {
             console.log('🔄 Manual CMS content refresh...');
             this.init();
         });
-        
+
         document.body.appendChild(refreshBtn);
-        
+
         // Add global reference for debugging
         window.cmsLoader = this;
         window.refreshCMS = () => this.init();
