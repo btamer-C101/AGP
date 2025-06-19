@@ -404,7 +404,7 @@ class EnhancedCMSContentLoader {
         }
 
         if (content.contact_info) {
-            this.updateElement('.contact-info h2', content.contact_info.main_title);
+            this.updateElement('.contact-form-section .contact-info h2:first-of-type', content.contact_info.main_title);
             this.updateElement('.contact-info p:first-of-type', content.contact_info.description);
 
             if (content.contact_info.service_areas) {
@@ -425,7 +425,7 @@ class EnhancedCMSContentLoader {
         if (content.services_overview) {
             this.updateElement('.services-label', content.services_overview.section_label);
             this.updateElement('.plumbing-services h2', content.services_overview.section_title);
-            this.updateElement('.services-text p', content.services_overview.section_description);
+            this.updateElement('.services-text > p:not(.services-label)', content.services_overview.section_description);
         }
 
         if (content.main_content) {
@@ -453,7 +453,7 @@ class EnhancedCMSContentLoader {
         if (content.services_overview) {
             this.updateElement('.overview-label', content.services_overview.section_label);
             this.updateElement('.services-overview h2', content.services_overview.section_title);
-            this.updateElement('.overview-text p', content.services_overview.section_description);
+            this.updateElement('.overview-text > p:not(.overview-label)', content.services_overview.section_description);
         }
     }
 
@@ -469,7 +469,7 @@ class EnhancedCMSContentLoader {
         if (content.services_overview) {
             this.updateElement('.overview-label', content.services_overview.section_label);
             this.updateElement('.services-overview h2', content.services_overview.section_title);
-            this.updateElement('.overview-text p', content.services_overview.section_description);
+            this.updateElement('.overview-text > p:not(.overview-label)', content.services_overview.section_description);
         }
     }
 
@@ -485,7 +485,7 @@ class EnhancedCMSContentLoader {
         if (content.services_overview) {
             this.updateElement('.overview-label', content.services_overview.section_label);
             this.updateElement('.services-overview h2', content.services_overview.section_title);
-            this.updateElement('.overview-text p', content.services_overview.section_description);
+            this.updateElement('.overview-text > p:not(.overview-label)', content.services_overview.section_description);
         }
     }
 
