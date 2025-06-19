@@ -2,7 +2,7 @@
   "hero": {
     "hero_label": "COMMERCIAL PLUMBING",
     "hero_title": "Florida's Full-Service Plumbing Partner, backed by Apollo's 37 Years of trust",
-    "background_image": "assets/imgs/service-map.jpg"
+    "background_image": "/assets/imgs/service-map.jpg"
   },
   "services_overview": {
     "section_label": "WHAT WE DO",
