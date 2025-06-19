@@ -330,15 +330,6 @@ class EnhancedCMSContentLoader {
             'footer_logo': ['.footer-logo img'],
             'hero_van': ['.hero-image img'],
             'service_map': ['.service-map img'],
-            // Add more mappings as needed
-            // 'hero_image': ['.hero-image img', '.hero-background'],
-            // 'about_image': ['.about-image img', '.about-background'],
-            // 'contact_image': ['.contact-image img', '.contact-background'],
-            'services_image': ['.services-image img'],
-            // 'plumbing_image': ['.services-image img', '.plumbing-background'],
-            // 'sewer_services_image': ['.sewer-services-image img', '.sewer-services-background'],
-            // 'drain_services_image': ['.drain-services-image img', '.drain-services-background'],
-            // 'sewer_drain_image': ['.sewer-drain-image img', '.sewer-drain-background']
         };
 
         return selectorMap[imageKey] || [];
