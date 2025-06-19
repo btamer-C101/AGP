@@ -9,12 +9,12 @@
   "service_areas": {
     "section_label": "SERVICE AREAS",
     "section_title": "Serving Florida With Superior Service",
-    
-    "map_image": "/assets/imgs/service-map.jpg"
+    "map_image": "/assets/imgs/service-map.jpg",
+    "section_description": "our team of dispatchers and fleet of fully-stocked trucks allow us to serve homeowners throughout the greater Florida 4455"
   },
   "services": {
     "section_label": "WHAT WE DO",
-    "section_title": "We're The Experts Florida Trusts"
-    
+    "section_title": "We're The Experts Florida Trusts",
+    "section_description": "If you need expert plumbing services in Florida, join the growing number of satisfied clients that have experienced our exceptional service for over 37 years."
   }
 }
