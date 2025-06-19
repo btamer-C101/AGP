@@ -75,40 +75,6 @@ class EnhancedCMSContentLoader {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    validateImagePath(src) {
-        if (!src) return false;
-
-        // Check if path is absolute or relative
-        const isAbsolute = src.startsWith('http') || src.startsWith('https') || src.startsWith('/');
-        const path = isAbsolute ? src : this.basePath + src;
-
-        // Test image loading
-        return new Promise((resolve) => {
-            const img = new Image();
-            img.onload = () => resolve(true);
-            img.onerror = () => {
-                if (this.debug) {
-                    console.error(`❌ Invalid image path: ${path}`);
-                }
-                resolve(false);
-            };
-            img.src = path;
-        });
-    }
-
-    async preloadImages() {
-        if (!this.contentCache.images) return;
-
-        if (this.debug) {
-            console.log('🔄 Preloading images...');
-        }
-
-        const imagePromises = Object.values(this.contentCache.images)
-            .map(src => this.validateImagePath(src));
-
-        await Promise.all(imagePromises);
-    }
-
     async init() {
         try {
             // Clear any existing cache
@@ -119,7 +85,6 @@ class EnhancedCMSContentLoader {
             }
 
             await this.loadAllContent();
-            await this.preloadImages();
             await this.applyContentToPage();
 
             if (this.debug) {
@@ -334,36 +299,11 @@ class EnhancedCMSContentLoader {
         if (this.contentCache.images) {
             const images = this.contentCache.images;
 
-            if (this.debug) {
-                console.log('🖼️ Applying images:', images);
-            }
-
             Object.entries(images).forEach(([key, src]) => {
+                // Try multiple selectors for each image type
                 const selectors = this.getImageSelectors(key);
-
-                if (this.debug) {
-                    console.log(`📷 Updating image "${key}" with:`, {
-                        src: src,
-                        selectors: selectors
-                    });
-                }
-
                 selectors.forEach(selector => {
-                    // Try updating as src attribute
-                    const updated = this.updateElement(selector, src, 'src');
-
-                    // If not updated and selector might be a background image
-                    if (!updated && selector.includes('hero')) {
-                        const element = document.querySelector(selector);
-                        if (element) {
-                            element.style.backgroundImage =
-                                `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${src}')`;
-
-                            if (this.debug) {
-                                console.log(`🎨 Updated background image for "${selector}"`);
-                            }
-                        }
-                    }
+                    this.updateElement(selector, src, 'src');
                 });
             });
         }
@@ -385,19 +325,11 @@ class EnhancedCMSContentLoader {
     }
 
     getImageSelectors(imageKey) {
-        // Add more specific and comprehensive selectors
         const selectorMap = {
-            'main_logo': ['.logo img', '.header img[alt*="logo" i]', 'header .logo img'],
-            'footer_logo': ['.footer-logo img', 'footer .footer-logo img'],
-            'hero_van': ['.hero-image img', '.hero img'],
-            'service_map': ['.service-map img'],
-            // Add more image mappings
-            'about_hero_bg': ['.about-hero'],
-            'plumbing_hero_bg': ['.plumbing-hero'],
-            'sewer_hero_bg': ['.sewer-services-hero'],
-            'drain_hero_bg': ['.drain-services-hero'],
-            'contact_hero_bg': ['.contact-hero'],
-            'overview_image': ['.overview-image img', '.services-image img']
+            'main_logo': ['.logo img', '.header img[alt*="logo" i]'],
+            'footer_logo': ['.footer-logo img'],
+            'hero_van': ['.hero-image img'],
+            'service_map': ['.service-map img']
         };
 
         return selectorMap[imageKey] || [];
@@ -476,11 +408,11 @@ class EnhancedCMSContentLoader {
             this.updateElement('.contact-info p:first-of-type', content.contact_info.description);
 
             if (content.contact_info.areas_title) {
-                this.updateElement('.service-areas-title', content.contact_info.areas_title);
-            }
-            if (content.contact_info.service_areas) {
-                this.updateElement('.service-areas-list', content.contact_info.service_areas, 'html');
-            }
+            this.updateElement('.service-areas-title', content.contact_info.areas_title);
+        }
+        if (content.contact_info.service_areas) {
+            this.updateElement('.service-areas-list', content.contact_info.service_areas, 'html');
+        }
         }
     }
 
