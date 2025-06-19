@@ -404,12 +404,15 @@ class EnhancedCMSContentLoader {
         }
 
         if (content.contact_info) {
-            this.updateElement('.contact-form-section .contact-info h2:first-of-type', content.contact_info.main_title);
+            this.updateElement('.contact-info h2', content.contact_info.main_title);
             this.updateElement('.contact-info p:first-of-type', content.contact_info.description);
 
-            if (content.contact_info.service_areas) {
-                this.updateElement('.contact-info p:last-of-type', content.contact_info.service_areas, 'html');
-            }
+            if (content.contact_info.service_areas_title) {
+            this.updateElement('.service-areas-title', content.contact_info.areas_title);
+        }
+        if (content.contact_info.service_areas) {
+            this.updateElement('.service-areas-list', content.contact_info.service_areas, 'html');
+        }
         }
     }
 
