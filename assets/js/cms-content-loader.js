@@ -334,7 +334,7 @@ class EnhancedCMSContentLoader {
             // 'hero_image': ['.hero-image img', '.hero-background'],
             // 'about_image': ['.about-image img', '.about-background'],
             // 'contact_image': ['.contact-image img', '.contact-background'],
-            'plumbing_image': ['.services-image img'],
+            'services_image': ['.services-image img'],
             // 'plumbing_image': ['.services-image img', '.plumbing-background'],
             // 'sewer_services_image': ['.sewer-services-image img', '.sewer-services-background'],
             // 'drain_services_image': ['.drain-services-image img', '.drain-services-background'],
