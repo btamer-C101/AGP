@@ -23,7 +23,7 @@ collections:
     files:
       - label: "Homepage Content"
         name: "homepage"
-        file: "/content/homepage.json"
+        file: "content/homepage.json"
         fields:
           - label: "Hero Section"
             name: "hero"
