@@ -13,7 +13,7 @@ local_backend: true
 deploy_hooks:
   - https://api.netlify.com/build_hooks/6852d1688fb998336c771029
 
-media_folder: "/assets/imgs"
+media_folder: "assets/imgs"
 public_folder: "/assets/imgs"
 
 collections:
