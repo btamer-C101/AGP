@@ -13,19 +13,36 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.init();
-      window.netlifyIdentity.on('init', user => {
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize Netlify Identity
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init();
+
+        // Check for invite token in URL
         const hash = window.location.hash;
-        if (!user && hash.includes('invite_token')) {
-          // Invitation → show signup
-          window.netlifyIdentity.open('signup');
-        } else if (!user && hash.includes('confirmation_token')) {
-          // Email confirmation → show login (it will auto‐confirm the user)
-          window.netlifyIdentity.open('login');
+        const inviteToken = hash.match(/invite_token=([^&]+)/);
+
+        if (inviteToken) {
+          // Remove the hash from URL
+          window.history.replaceState(null, '', window.location.pathname);
+
+          // Open signup modal with slight delay to ensure widget is ready
+          setTimeout(() => {
+            window.netlifyIdentity.open('signup');
+          }, 500);
         }
-      });
-    }
+
+        // Handle other authentication states
+        window.netlifyIdentity.on('init', user => {
+          if (!user) {
+            if (hash.includes('confirmation_token')) {
+              window.netlifyIdentity.open('login');
+            }
+          }
+        });
+      }
+    });
   </script>
 
 
