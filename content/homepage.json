@@ -1,7 +1,7 @@
 {
   "hero": {
     "hero_label": "ABOUT US",
-    "hero_title": "Florida Plumbing, Sewer & Drain Services Since 1986",
+    "hero_title": "Florida Plumbing, Sewer & Drain Services Since 1987",
     "hero_description": "American Gulf Plumbing (AGP) focus on commercial, industrial, and governmental plumbing, specializing in the complex, large-scale demands of these sectors, delivering sustained solutions that keep operations running.",
     "years_stat": 37,
     "hero_image": "/assets/imgs/van.png"
@@ -9,7 +9,7 @@
   "service_areas": {
     "section_label": "SERVICE AREAS",
     "section_title": "Serving Florida With Superior Service",
-    "section_description": "our team of dispatchers and fleet of fully-stocked trucks allow us to serve homeowners throughout the greater Florida",
+    "section_description": "our team of dispatchers and fleet of fully-stocked trucks allow us to serve homeowners throughout the greater Florida 444555",
     "map_image": "/assets/imgs/service-map.jpg"
   },
   "services": {
