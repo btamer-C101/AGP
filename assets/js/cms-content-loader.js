@@ -407,7 +407,7 @@ class EnhancedCMSContentLoader {
             this.updateElement('.contact-info h2', content.contact_info.main_title);
             this.updateElement('.contact-info p:first-of-type', content.contact_info.description);
 
-            if (content.contact_info.service_areas_title) {
+            if (content.contact_info.areas_title) {
             this.updateElement('.service-areas-title', content.contact_info.areas_title);
         }
         if (content.contact_info.service_areas) {
