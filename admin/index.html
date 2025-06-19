@@ -17,29 +17,31 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Initialize Netlify Identity
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.init();
+        window.netlifyIdentity.init({
+          enableSignup: false, // Disable regular signup
+          locale: 'en' // Set locale
+        });
 
         // Check for invite token in URL
         const hash = window.location.hash;
-        const inviteToken = hash.match(/invite_token=([^&]+)/);
+        const inviteToken = hash.includes('invite_token');
+        const confirmationToken = hash.includes('confirmation_token');
 
         if (inviteToken) {
-          // Remove the hash from URL
-          window.history.replaceState(null, '', window.location.pathname);
-
-          // Open signup modal with slight delay to ensure widget is ready
-          setTimeout(() => {
-            window.netlifyIdentity.open('signup');
-          }, 500);
+          // Handle invite token
+          window.netlifyIdentity.open('signup');
+        } else if (confirmationToken) {
+          // Handle confirmation token
+          window.netlifyIdentity.open('login');
+        } else {
+          // Regular access to admin - show login only
+          window.netlifyIdentity.open('login');
         }
 
-        // Handle other authentication states
-        window.netlifyIdentity.on('init', user => {
-          if (!user) {
-            if (hash.includes('confirmation_token')) {
-              window.netlifyIdentity.open('login');
-            }
-          }
+        // Handle successful signup
+        window.netlifyIdentity.on('signup', () => {
+          // Clear the hash after signup
+          window.history.replaceState(null, '', window.location.pathname);
         });
       }
     });
